@@ -27,4 +27,4 @@ Once the message is receieved this iflow will pull all the product data from S4 
 
 ## Use ingestion service to post data to non-sap system
 
-Use the spring boot based ingestion service to post data to non-sap system.
+Use the spring boot based [ingestion service](https://github.com/mineshsapkota/assignment-ingestion) to post data to non-sap system.
