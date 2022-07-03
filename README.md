@@ -7,8 +7,7 @@ In this particular project we have created below API consumption CDS views and u
 1. [ZA_ProductApi](API%20CDS/Consumption%20CDS/ZA_ProductApi.txt)
 2. [ZA_CustProdDesc](API%20CDS/Consumption%20CDS/ZA_CustProdDesc.txt)
 
-These CDS view will be mapped as OData entites and can be accessed for consumption.
-
+These CDS view are mapped as OData entites and can be accessed for consumption.
 ## Publish Events
 
 Whenever there is a new product created or changed an event will be triggered to registered S4HANA event for product as mentioned in [API Hub](https://api.sap.com/event/SAPS4HANABusinessEvents_ProductEvents/resource).
