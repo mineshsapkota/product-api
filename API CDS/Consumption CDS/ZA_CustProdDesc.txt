@@ -1,0 +1,26 @@
+@AbapCatalog.sqlViewName: 'ZACUSTPRODDESC'
+@AbapCatalog.compiler.compareFilter: true
+@AbapCatalog.preserveKey: true
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Customer Product Description'
+@VDM.viewType: #CONSUMPTION
+@ObjectModel: {
+    usageType.serviceQuality: #A,
+    usageType.sizeCategory : #L,
+    usageType.dataClass: #MASTER
+}
+@ClientHandling.algorithm: #SESSION_VARIABLE
+@Metadata.ignorePropagatedAnnotations:true
+@ObjectModel.createEnabled: true
+@ObjectModel.updateEnabled: true
+@ObjectModel.deleteEnabled: true
+@VDM.lifecycle.contract.type:#PUBLIC_REMOTE_API
+define view ZA_CustProdDesc as select from ZI_CustProductDescription {
+   key Product,
+  key Language,
+
+      @Semantics.text : true
+      ProductDescription,
+    //Exposed associations  
+      _Product
+}

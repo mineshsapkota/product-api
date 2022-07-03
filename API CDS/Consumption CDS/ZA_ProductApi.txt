@@ -1,0 +1,90 @@
+@AbapCatalog.sqlViewName: 'ZAPRODAPI'
+@AbapCatalog.compiler.compareFilter: true
+@AbapCatalog.preserveKey: true
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Product'
+@VDM.viewType:#CONSUMPTION
+@ObjectModel.representativeKey: 'Product'
+@ObjectModel.usageType.serviceQuality: #A
+@ObjectModel.usageType.sizeCategory : #L
+@ObjectModel.usageType.dataClass: #MASTER
+@ClientHandling.algorithm: #SESSION_VARIABLE
+@Metadata.ignorePropagatedAnnotations:true
+@ObjectModel.createEnabled:true
+@ObjectModel.updateEnabled:true
+@ObjectModel.deleteEnabled:true
+@VDM.lifecycle.contract.type:#PUBLIC_REMOTE_API
+define view ZA_ProductApi as select from I_Product 
+association [0..*] to ZA_CustProdDesc    as _Description           on _Description.Product = $projection.Product
+{
+  key Product,
+      @ObjectModel.sapObjectNodeTypeReference:'ProductType'
+      ProductType,
+      @ObjectModel.sapObjectNodeTypeReference:'ProductProfileCode'
+      CrossPlantStatus,
+      CrossPlantStatusValidityDate,
+      @ObjectModel.readOnly: true
+      CreationDate, //CreationDate,
+      @ObjectModel.readOnly: true
+      CreatedByUser, //CreatedByUser,
+      @ObjectModel.readOnly: true
+      LastChangeDate, //LastChangeDate,
+      @ObjectModel.readOnly: true
+      LastChangedByUser, //LastChangedByUser,
+      @ObjectModel.readOnly: true
+      LastChangeDateTime,
+      IsMarkedForDeletion, //MaterialIsMarkedForDeletion,
+      ProductOldID, //MaterialOldID,
+      @Semantics.quantity.unitOfMeasure: 'WeightUnit'
+      GrossWeight, //MaterialGrossWeight,
+      PurchaseOrderQuantityUnit, //PurgDocOrderQuantityUnit,
+      SourceOfSupply,
+      WeightUnit, //MaterialWeightUnit,  //erro
+      @Semantics.quantity.unitOfMeasure: 'WeightUnit'
+      NetWeight, //MaterialNetWeight,
+      CountryOfOrigin, //CountryOfOrigin,
+      CompetitorID, //Customer,
+      @ObjectModel.sapObjectNodeTypeReference:'ProductGroup'
+      ProductGroup, //MaterialGroup,
+      BaseUnit, //MaterialBaseUnit,
+      @ObjectModel.sapObjectNodeTypeReference:'ProductItemCategoryGroup'
+      ItemCategoryGroup,
+      ProductHierarchy, //ProductHierarchy,
+      Division, //Division,
+      VarblPurOrdUnitIsActive, //PSTAT Changes
+      VolumeUnit, ///error
+      @Semantics.quantity.unitOfMeasure: 'VolumeUnit'
+      MaterialVolume,
+      // NEW FIELDS
+      ANPCode,
+      //      Product.ProductCategory,
+      Brand,
+      ProcurementRule,
+      ValidityStartDate,
+      LowLevelCode, //not found in excel
+      ProdNoInGenProdInPrepackProd,
+      SerialIdentifierAssgmtProfile,
+
+      SizeOrDimensionText,
+
+      IndustryStandardName,
+      ProductStandardID,
+      @ObjectModel.sapObjectNodeTypeReference:'GlobalTradeItemNumberCategory'
+      InternationalArticleNumberCat,
+
+      ProductIsConfigurable,
+
+      IsBatchManagementRequired,
+      ExternalProductGroup,
+
+      CrossPlantConfigurableProduct,
+
+      SerialNoExplicitnessLevel,
+
+      ProductManufacturerNumber,
+
+      ManufacturerNumber,
+
+
+      _Description
+}

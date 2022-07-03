@@ -1,0 +1,17 @@
+ZD_ProductChanged:
+Annotations:
+@EndUserText.label : Product Created’
+@Event.sapObjectType: 'Product'
+@Event.sapObjectNodeType: 'Product'
+@VDM.usage.type: [#EVENT_SIGNATURE]
+@Event.type: ‘ProductChanged’
+@Event.implementedBy: ['ABAP:CLASS_EVENT-ZCL_ASSIGNMENT_PRODUCT_EVENT-CHANGED']
+Abstract Entity definition: (other fields to be included if required to be passed as parameters
+define abstract entity ZD_ProductChanged 
+{
+    		key ProductId : matnr;
+            ProductDescription : maktx;
+            WeightUnit : gewei;
+      }
+
+

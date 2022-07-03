@@ -1,0 +1,20 @@
+/**********************************************************
+* Whenever product is created below code will fire events
+*************************************************************/
+DATA(lo_event_container) = cl_swf_evt_event=>get_event_container(
+        EXPORTING im_objcateg = cl_swf_evt_event=>mc_objcateg_cl
+                  im_objtype  = 'ZCL_ASSIGNMENT_PRODUCT_EVENT’
+                  im_event    = ‘ProductCreated’).
+lo_event_container->set( name = 'ProductId'
+                        value = <product_id> ).
+
+/************************************************************
+** Whenever product is changed **********
+*************************************************/
+
+DATA(lo_event_container) = cl_swf_evt_event=>get_event_container(
+        EXPORTING im_objcateg = cl_swf_evt_event=>mc_objcateg_cl
+                  im_objtype  = 'ZCL_ASSIGNMENT_PRODUCT_EVENT’
+                  im_event    = ‘ProductChanged’).
+lo_event_container->set( name = 'ProductId'
+                        value = <product_id> ).
