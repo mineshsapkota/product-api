@@ -2,6 +2,10 @@
 
 In this particular project we have created below API consumption CDS views and used segw RDS based SADL mapping to generate the OData service out of these CDS views.
 
+## Technologies/Platform Used
+
+SAP ABAP, SAP CDS, OData,SADL,SAP Event Mesh, SAP CPI.
+
 ## API Consumption CDS views
 
 1. [ZA_ProductApi](API%20CDS/Consumption%20CDS/ZA_ProductApi.txt)
@@ -28,3 +32,9 @@ Once the message is receieved this iflow will pull all the product data from S4 
 ## Use ingestion service to post data to non-sap system
 
 Use the spring boot based [ingestion service](https://github.com/mineshsapkota/assignment-ingestion) to post data to non-sap system.
+
+## Other Approaches analyzed
+
+I also analyzed on the Cloud Data Integration(CDI) approach of just using the CDS annotation `@Analytics.dataExtraction.enabled : true`.
+
+But this approach is not as per the requirement because there was a requirement to use Event Mesh and CPI.
