@@ -12,6 +12,10 @@ SAP ABAP, SAP CDS, OData,SADL,SAP Event Mesh, SAP CPI.
 2. [ZA_CustProdDesc](API%20CDS/Consumption%20CDS/ZA_CustProdDesc.txt)
 
 These CDS view are mapped as OData entites and can be accessed for consumption.
+
+A sample response from API is shown below.
+
+![SAMPLE_PRODUCT_API_RESPONSE](img/product_api_response.png)
 ## Publish Events
 
 Whenever there is a new product created or changed an event will be triggered to registered S4HANA event for product as mentioned in [API Hub](https://api.sap.com/event/SAPS4HANABusinessEvents_ProductEvents/resource).
